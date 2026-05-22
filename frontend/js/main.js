@@ -44,8 +44,9 @@ async function loadProducts() {
       return;
     }
     
-    container.innerHTML = data.products.map(p => `
+    container.innerHTML = data.products.map((p, i) => `
       <div class="product-card" data-id="${p.id}">
+        <div class="product-index">${i + 1}</div>
         <div class="product-media">
           <img src="images/product-${p.slug}.jpg" alt="${p.name}" onerror="this.src='images/hero-bg.jpg'">
         </div>
