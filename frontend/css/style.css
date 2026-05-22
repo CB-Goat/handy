@@ -260,8 +260,7 @@ section {
 
 /* ---------- 产品列表 ---------- */
 .products {
-  background: rgba(255,255,255,0.88);
-  backdrop-filter: blur(6px);
+  /* 透明，让产品卡片直接浮在背景图上 */
 }
 
 .products-list {
