@@ -1,18 +1,18 @@
 services:
-  # Nginx 反向代理 + 静态文件服务
   nginx:
     image: nginx:alpine
     container_name: toolbox-nginx
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ./frontend:/usr/share/nginx/html:ro
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
     depends_on:
       - backend
     restart: unless-stopped
 
-  # Node.js 后端服务
   backend:
     build:
       context: ./backend
