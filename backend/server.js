@@ -14,6 +14,17 @@ app.use(express.json({ limit: '10kb' }));
 const DB_PATH = process.env.DB_PATH || path.join(__dirname, 'data', 'messages.db');
 const db = new Database(DB_PATH);
 
+// 数据库迁移：为旧 messages 表添加 product_id 列
+try {
+  const cols = db.prepare("PRAGMA table_info(messages)").all().map(c => c.name);
+  if (!cols.includes('product_id')) {
+    db.exec(`ALTER TABLE messages ADD COLUMN product_id INTEGER DEFAULT 0`);
+    console.log('[DB] 迁移: messages 表添加 product_id 列');
+  }
+} catch (e) {
+  console.log('[DB] 迁移检查跳过:', e.message);
+}
+
 // 创建产品表
 db.exec(`
   CREATE TABLE IF NOT EXISTS products (
@@ -28,19 +39,6 @@ db.exec(`
     color TEXT DEFAULT '#6C5CE7',
     sort_order INTEGER DEFAULT 0,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-  )
-`);
-
-// 创建留言表（支持产品关联）
-db.exec(`
-  CREATE TABLE IF NOT EXISTS messages (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    product_id INTEGER DEFAULT 0,
-    name TEXT NOT NULL,
-    email TEXT DEFAULT '',
-    content TEXT NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (product_id) REFERENCES products(id)
   )
 `);
 
