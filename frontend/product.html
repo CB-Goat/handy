@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>产品详情 - Handy.xin</title>
+  <meta name="description" content="Handy.xin 产品详情">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="/" class="logo">
+        <span class="logo-icon">🛠️</span>
+        <span class="logo-text">Handy.xin</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">主页</a></li>
+        <li><a href="/#messages">用户留言</a></li>
+        <li><a href="/#contact">联系我们</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 产品详情 -->
+  <section class="product-detail" id="productDetail">
+    <div class="container">
+      <div class="product-detail-loading" id="productLoading">
+        <div class="loading-spinner"></div>
+        <p>加载中...</p>
+      </div>
+      <div class="product-detail-content hidden" id="productContent">
+        <div class="product-detail-header">
+          <a href="/" class="back-link">← 返回首页</a>
+        </div>
+        <div class="product-detail-main">
+          <div class="product-media">
+            <div class="media-carousel" id="mediaCarousel">
+              <!-- 轮播内容由 JS 动态生成 -->
+            </div>
+            <div class="media-thumbs" id="mediaThumbs"></div>
+          </div>
+          <div class="product-info">
+            <div class="product-icon-large" id="productIcon"></div>
+            <h1 class="product-name" id="productName"></h1>
+            <p class="product-description" id="productDesc"></p>
+            <div class="product-features" id="productFeatures"></div>
+            <div class="product-actions">
+              <button class="btn btn-like" id="likeBtn">
+                <span>❤️</span>
+                <span id="likeCount">0</span>
+              </button>
+              <button class="btn btn-share" id="shareBtn">
+                <span>📤</span>
+                <span id="shareCount">0</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-messages">
+          <h3>产品留言 <span id="productMessageCount">(0)</span></h3>
+          <form id="productMessageForm" class="message-form">
+            <div class="form-group">
+              <input type="text" id="msgName" name="name" placeholder="你的昵称" required>
+            </div>
+            <div class="form-group">
+              <textarea id="msgContent" name="content" rows="3" placeholder="对这个产品有什么想法..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">提交留言</button>
+          </form>
+          <div class="message-list" id="productMessageList"></div>
+        </div>
+      </div>
+      <div class="product-detail-error hidden" id="productError">
+        <p>产品不存在或已下架</p>
+        <a href="/" class="btn btn-primary">返回首页</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <span class="logo-icon">🛠️</span>
+            <span class="logo-text">Handy.xin</span>
+          </a>
+          <p>极致顺手，实用至上。</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>导航</h4>
+            <a href="/">主页</a>
+            <a href="/#products">精选工具</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Handy.xin All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast 通知 -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/product.js"></script>
+</body>
+</html>

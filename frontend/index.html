@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handy.xin - 您身边的HandyToolBox，极致顺手，实用至上！</title>
+  <meta name="description" content="Handy.xin，收录、展示新鲜创造的个性化实用工具，实用、顺手、有创意。Simply Handy，极致顺手，实用至上！">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="/" class="logo">
+        <span class="logo-icon">🛠️</span>
+        <span class="logo-text">Handy.xin</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">主页</a></li>
+        <li><a href="#messages">用户留言</a></li>
+        <li><a href="#contact">联系我们</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero 区域 -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="images/hero-bg.jpg" alt="Handy.xin" class="hero-bg-img">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content">
+      <h1 class="hero-title">
+        Handy.xin<br>
+        <span class="hero-subtitle">您身边的HandyToolBox</span>
+      </h1>
+      <p class="hero-desc">
+        极致顺手，实用至上！<br>
+        这里收录、展示新鲜创造的个性化实用工具，<br>
+        它们有着特定的优良品质：实用、顺手、有创意。
+      </p>
+      <p class="hero-slogan">
+        Simply Handy，愿我们为您的个人生活，增添一缕阳光，一丝温暖！
+      </p>
+      <a href="#products" class="btn btn-primary btn-lg">
+        <span>探索工具</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- 产品列表 -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">🛠️ 精选工具</span>
+        <h2 class="section-title">发现实用好工具</h2>
+        <p class="section-desc">每一个工具都经过精心挑选，只为给您最好的使用体验</p>
+      </div>
+      <div class="products-list" id="productsList">
+        <!-- 产品列表由 JS 动态加载 -->
+        <div class="loading">加载中...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户留言 -->
+  <section class="messages" id="messages">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">💬 用户留言</span>
+        <h2 class="section-title">听听大家怎么说</h2>
+        <p class="section-desc">我们非常重视每一位用户的反馈</p>
+      </div>
+      <div class="messages-layout">
+        <div class="message-form-wrapper">
+          <h3 class="form-title">留下你的想法 ✍️</h3>
+          <form id="messageForm" class="message-form">
+            <div class="form-group">
+              <label for="name">昵称</label>
+              <input type="text" id="name" name="name" placeholder="你的昵称" required>
+            </div>
+            <div class="form-group">
+              <label for="email">邮箱 <span class="optional">(选填)</span></label>
+              <input type="email" id="email" name="email" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label for="content">留言内容</label>
+              <textarea id="content" name="content" rows="4" placeholder="分享你的使用体验、建议或问题..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              <span id="submitText">提交留言</span>
+              <span id="submitLoading" class="hidden">提交中...</span>
+            </button>
+          </form>
+        </div>
+        <div class="message-list-wrapper">
+          <div class="message-list-header">
+            <h3>最新留言 <span class="message-count" id="messageCount">(0)</span></h3>
+          </div>
+          <div class="message-list" id="messageList">
+            <div class="message-empty">
+              <div class="empty-icon">📭</div>
+              <p>还没有留言，来抢沙发吧！</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系我们 -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">📮 联系我们</span>
+        <h2 class="section-title">与我们取得联系</h2>
+        <p class="section-desc">有任何问题或建议，欢迎随时联系</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <div>
+              <h4>电子邮箱</h4>
+              <p>contact@handy.xin</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">💬</span>
+            <div>
+              <h4>微信公众号</h4>
+              <p>HandyTools</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <span class="logo-icon">🛠️</span>
+            <span class="logo-text">Handy.xin</span>
+          </a>
+          <p>极致顺手，实用至上。<br>愿我们为您的个人生活，增添一缕阳光，一丝温暖！</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>导航</h4>
+            <a href="/">主页</a>
+            <a href="#products">精选工具</a>
+            <a href="#messages">用户留言</a>
+          </div>
+          <div class="footer-col">
+            <h4>关于</h4>
+            <a href="#contact">联系我们</a>
+            <a href="#">隐私政策</a>
+            <a href="#">使用条款</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Handy.xin All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast 通知 -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
