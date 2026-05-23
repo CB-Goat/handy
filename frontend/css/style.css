@@ -283,6 +283,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 48px;
+  margin-top: -60px;
 }
 
 .product-card {
