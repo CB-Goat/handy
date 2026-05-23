@@ -323,7 +323,7 @@ section {
 .product-media {
   position: relative;
   background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
-  min-height: 300px;
+  min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -336,17 +336,17 @@ section {
 }
 
 .product-info {
-  padding: 32px;
+  padding: 20px 24px;
   display: flex;
   flex-direction: column;
 }
 
 .product-icon {
   font-size: 3rem;
-  margin-bottom: 16px;
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
+  margin-bottom: 10px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -358,9 +358,9 @@ section {
 }
 
 .product-name {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .product-name a {
@@ -373,15 +373,16 @@ section {
 
 .product-desc {
   color: var(--text-light);
-  margin-bottom: 16px;
-  line-height: 1.7;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-size: 0.9rem;
 }
 
 .product-features {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: 6px;
+  margin-bottom: 12px;
 }
 
 .feature-tag {
@@ -394,16 +395,9 @@ section {
 
 .product-actions {
   display: flex;
+  align-items: center;
   gap: 12px;
   margin-top: auto;
-}
-
-.product-stats {
-  display: flex;
-  gap: 16px;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
 }
 
 .stat-item {
@@ -414,6 +408,7 @@ section {
   color: var(--text-light);
   cursor: pointer;
   transition: var(--transition);
+  margin-left: auto;
 }
 
 .stat-item:hover {

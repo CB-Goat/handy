@@ -68,8 +68,6 @@ async function loadProducts() {
               <span>📤</span>
               <span class="share-count">${p.share_count || 0}</span>
             </button>
-          </div>
-          <div class="product-stats">
             <span class="stat-item" onclick="location.href='product.html?slug=${p.slug}'">
               💬 ${p.message_count || 0} 留言
             </span>
