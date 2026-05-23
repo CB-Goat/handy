@@ -90,15 +90,6 @@ const initProducts = () => {
         icon: '🎯',
         color: '#1E4A7C',
         sort_order: 2
-      },
-      {
-        name: 'TextMaster',
-        slug: 'textmaster',
-        description: '专业文本处理工具，支持格式转换、翻译、排版、统计等功能。',
-        features: '格式转换|多语言翻译|智能排版|字数统计|正则替换',
-        icon: '📝',
-        color: '#FD79A8',
-        sort_order: 3
       }
     ];
     
@@ -128,6 +119,12 @@ const migrateProducts = () => {
   if (old2) {
     db.prepare(`UPDATE products SET name = '闻风标', slug = 'wenfengbiao', description = '及时而全面的全国标讯信息，助您捕捉商机先人一步。', features = '实时标讯|智能推送|商机分析|全国覆盖|精准筛选', icon = '🎯', color = '#1E4A7C' WHERE slug = 'imagemagic'`).run();
     console.log('[DB] 迁移: ImageMagic → 闻风标');
+  }
+  // 删除第三个产品
+  const old3 = db.prepare("SELECT * FROM products WHERE slug = 'textmaster'").get();
+  if (old3) {
+    db.prepare("DELETE FROM products WHERE slug = 'textmaster'").run();
+    console.log('[DB] 删除: TextMaster');
   }
 };
 migrateProducts();
