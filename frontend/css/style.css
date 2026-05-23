@@ -248,13 +248,11 @@ section {
 }
 
 .section-header {
-  text-align: center;
   margin-bottom: 48px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 12px;
-  flex-wrap: wrap;
 }
 
 .section-tag {
@@ -266,17 +264,19 @@ section {
   font-weight: 500;
   color: var(--primary);
   margin-bottom: 0;
+  flex-shrink: 0;
 }
 
 .section-title {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 800;
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 .section-desc {
   font-size: 1rem;
   color: var(--text-light);
+  text-align: right;
 }
 
 /* ---------- 产品列表 ---------- */
