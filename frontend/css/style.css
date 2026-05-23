@@ -331,8 +331,9 @@ section {
 
 .product-media img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: auto;
+  max-height: 180px;
+  object-fit: contain;
 }
 
 .product-info {
