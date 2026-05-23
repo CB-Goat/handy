@@ -337,6 +337,17 @@ section {
 .product-icon {
   font-size: 3rem;
   margin-bottom: 16px;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.product-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .product-name {

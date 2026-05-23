@@ -74,12 +74,12 @@ const initProducts = () => {
   if (count.count === 0) {
     const products = [
       {
-        name: 'ToolBox Pro',
-        slug: 'toolbox-pro',
-        description: '一站式工具集合平台，集成 50+ 实用工具，让工作更简单高效。',
-        features: '极速响应|精美界面|AI智能助手|云端同步|团队协作',
-        icon: '🧰',
-        color: '#6C5CE7',
+        name: '悦读小将',
+        slug: 'yuedujiang',
+        description: '趣味阅读助手，让阅读变成一场精彩的冒险之旅！陪伴孩子快乐阅读，培养终身学习的好习惯。',
+        features: '趣味阅读|成长记录|阅读打卡|好书推荐|成就系统',
+        icon: '📚',
+        color: '#E63946',
         sort_order: 1
       },
       {
@@ -116,6 +116,16 @@ const initProducts = () => {
 };
 
 initProducts();
+
+// 数据迁移：更新旧产品数据
+const migrateProducts = () => {
+  const old = db.prepare("SELECT * FROM products WHERE slug = 'toolbox-pro'").get();
+  if (old) {
+    db.prepare(`UPDATE products SET name = '悦读小将', slug = 'yuedujiang', description = '趣味阅读助手，让阅读变成一场精彩的冒险之旅！陪伴孩子快乐阅读，培养终身学习的好习惯。', features = '趣味阅读|成长记录|阅读打卡|好书推荐|成就系统', icon = '📚', color = '#E63946' WHERE slug = 'toolbox-pro'`).run();
+    console.log('[DB] 迁移: ToolBox Pro → 悦读小将');
+  }
+};
+migrateProducts();
 
 console.log(`[DB] 数据库已初始化: ${DB_PATH}`);
 

@@ -51,7 +51,7 @@ async function loadProducts() {
           <img src="images/product-${p.slug}.jpg" alt="${p.name}" onerror="this.src='images/hero-bg.jpg'">
         </div>
         <div class="product-info">
-          <div class="product-icon">${p.icon}</div>
+          <div class="product-icon"><img src="images/product-${p.slug}.jpg" alt="${p.name}" class="product-icon-img"></div>
           <h3 class="product-name">
             <a href="product.html?slug=${p.slug}">${p.name}</a>
           </h3>
