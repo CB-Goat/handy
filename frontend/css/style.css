@@ -332,7 +332,7 @@ section {
 .product-media img {
   width: 100%;
   height: auto;
-  max-height: 180px;
+  max-height: 240px;
   object-fit: contain;
 }
 
