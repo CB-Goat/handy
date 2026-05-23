@@ -761,35 +761,157 @@ section {
 
 /* ---------- 响应式 ---------- */
 @media (max-width: 768px) {
+  /* 导航 */
   .nav-links {
     display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    padding: 16px 24px;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav-links.active {
+    display: flex;
   }
   
   .mobile-menu-btn {
     display: flex;
   }
-  
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .logo-slogan {
+    display: none;
+  }
+
+  /* 主题标语 */
+  .hero-banner {
+    padding: 80px 0 24px;
+  }
+
+  .hero-slogan-zh {
+    font-size: 1.3rem;
+  }
+
+  .hero-slogan-en {
+    font-size: 0.95rem;
+  }
+
+  /* 通用 Section */
+  section {
+    padding: 48px 0;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 32px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-desc {
+    text-align: left;
+    font-size: 0.88rem;
+  }
+
+  /* 产品卡片 */
   .product-card {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
-  
+
+  .product-index {
+    width: 56px;
+    height: 56px;
+    font-size: 1.6rem;
+    border-radius: 0 var(--radius-md) 0 var(--radius-md);
+  }
+
+  .product-media img {
+    max-height: 200px;
+  }
+
+  .product-info {
+    padding: 16px;
+  }
+
+  .product-actions {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .stat-item {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* 留言 */
   .messages-layout {
     grid-template-columns: 1fr;
   }
-  
+
+  /* 联系 */
   .contact-info {
     grid-template-columns: 1fr;
   }
-  
+
+  /* 页脚 */
+  .footer {
+    padding: 24px 0;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+    font-size: 0.78rem;
+  }
+
+  /* 产品详情页 */
   .product-detail-main {
     grid-template-columns: 1fr;
   }
-  
-  .footer-content {
-    flex-direction: column;
+
+  .product-detail .product-name {
+    font-size: 1.5rem;
   }
-  
-  .footer-links {
-    gap: 32px;
+
+  .product-messages {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-slogan-zh {
+    font-size: 1.1rem;
+  }
+
+  .hero-slogan-en {
+    font-size: 0.82rem;
+  }
+
+  .product-media img {
+    max-height: 160px;
+  }
+
+  .btn-like, .btn-share {
+    padding: 8px 14px;
+    font-size: 0.85rem;
   }
 }
