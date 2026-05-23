@@ -83,12 +83,12 @@ const initProducts = () => {
         sort_order: 1
       },
       {
-        name: 'ImageMagic',
-        slug: 'imagemagic',
-        description: '智能图片处理工具，支持格式转换、压缩、裁剪、滤镜等功能。',
-        features: '批量处理|格式转换|智能压缩|滤镜特效|云端保存',
-        icon: '🖼️',
-        color: '#00CEC9',
+        name: '闻风标',
+        slug: 'wenfengbiao',
+        description: '及时而全面的全国标讯信息，助您捕捉商机先人一步。',
+        features: '实时标讯|智能推送|商机分析|全国覆盖|精准筛选',
+        icon: '🎯',
+        color: '#1E4A7C',
         sort_order: 2
       },
       {
@@ -119,10 +119,15 @@ initProducts();
 
 // 数据迁移：更新旧产品数据
 const migrateProducts = () => {
-  const old = db.prepare("SELECT * FROM products WHERE slug = 'toolbox-pro'").get();
-  if (old) {
+  const old1 = db.prepare("SELECT * FROM products WHERE slug = 'toolbox-pro'").get();
+  if (old1) {
     db.prepare(`UPDATE products SET name = '悦读小将', slug = 'yuedujiang', description = '趣味阅读助手，让阅读变成一场精彩的冒险之旅！陪伴孩子快乐阅读，培养终身学习的好习惯。', features = '趣味阅读|成长记录|阅读打卡|好书推荐|成就系统', icon = '📚', color = '#E63946' WHERE slug = 'toolbox-pro'`).run();
     console.log('[DB] 迁移: ToolBox Pro → 悦读小将');
+  }
+  const old2 = db.prepare("SELECT * FROM products WHERE slug = 'imagemagic'").get();
+  if (old2) {
+    db.prepare(`UPDATE products SET name = '闻风标', slug = 'wenfengbiao', description = '及时而全面的全国标讯信息，助您捕捉商机先人一步。', features = '实时标讯|智能推送|商机分析|全国覆盖|精准筛选', icon = '🎯', color = '#1E4A7C' WHERE slug = 'imagemagic'`).run();
+    console.log('[DB] 迁移: ImageMagic → 闻风标');
   }
 };
 migrateProducts();
